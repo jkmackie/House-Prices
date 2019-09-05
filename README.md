@@ -25,6 +25,7 @@ Below, the house price is normalized to Guassian using the natural log transform
 
 Also, not our goal is to predict house price in dollars.  So any transformation must be mathematically reversable.  Please see my notebook for the inverse transformations for LN(x+1) and YJ(x).  They are derived using the log rules to solve for our original variable x.
 ***
+#### <ins>Data Cleaning</ins>
 Missing data was cleaned on a case-by-case basis after thorough exploration.  For example, missing KitchenQual was replaced with the most common quality, 'TA'.  KitchenQual was presented as a categorical variable, but it is actually ordinal--the categories have a meaningful order.  It was updated as follows:
 
 * **Before:** `[Ex, Gd, TA, Fa, Po, None]`
@@ -68,6 +69,7 @@ The benefit is that we can reduce the dimensions of our model.  It turns out tha
 #### <ins>Enhancements</ins>
 Future model enhancements include ensembling multiple models.  For example, averaging the results of Ridge regression and tree-based regression.  Effective ensembling improves model accuracy, the signal, while averaging out noise that differs across models.
 
-Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay big premium for high "OverallCond" and "OverallQual" houses over low condition.  Conversely, low-end buyers might pay a small premium for high condition over low condition.  Perhaps a LOOE-style feature based average price by Neighborhood/Condition would capture this relationship.
+Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high "OverallCond" and "OverallQual" houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
 ***
+#### <ins>Result</ins>
 The posted Iowa Houses model, the .ipynb notebook, scored 0.11963 on Kaggle.  This is top 25% on the Leaderboard.
