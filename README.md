@@ -9,7 +9,8 @@ This model, written in Python, predicts house prices.  The regression model was 
 
 Good models need a reality-check to make sure the model generalizes to unseen data, which we call **holdout** data.  After fitting/scoring the model with CV, I also scored model predictions on the holdout data.
 
-The best model was Ridge, which was unsurprising as model dimensionality was high compared to available observations.  Ridge reduced the complexity of the model by regularizing the features.  It does this by penalizing some features with low weights, decreasing model complexity.
+The best model was Ridge, which was unsurprising as model dimensionality was high compared to available observations.  Ridge reduced the complexity of the model by regularizing the features.  It does this by penalizing some features with low weights, decreasing model complexity.  The regularization also handles the multicollinear features. (Principal Component Analysis will cut the number of features to a smaller number of uncorrelated principal components.  See below.)
+
 
 #### <ins>Feature Engineering</ins>
 
@@ -52,7 +53,7 @@ High cardinality categorical features are features with many unique values.  Thi
 There are other encoding techniques like [Leave-One-Out-Encoding (LOOE)](http://contrib.scikit-learn.org/categorical-encoding/leaveoneout.html) to handle high cardinality scenarios.  **Leave-One-Out** calculates the mean target by category ("level"), but excludes the current row (and optionally adds noise) to avoid overfitting.  I didn't try LOOE because it is better for binary classification.
 
 #### <ins>Principal Component Analysis</ins>
-Another way to deal with the high dimensionality (too many columns) issue is to compress the columns into fewer columns using [Principal Component Analysis (PCA)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html).  PCA maximizes data variance (equivalently, minimizing residual error), which sidesteps dealing with invariant columns manually.  Remember to standardize the features first!
+Another way to deal with the high dimensionality (too many columns) issue is to compress the columns into fewer columns using [Principal Component Analysis (PCA)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html).  PCA maximizes data variance (equivalently, minimizing residual error), which sidesteps dealing with invariant columns manually.  Remember to standardize the features before applying PCA!
 
 Unfortunately, PCA makes the model harder to explain.  Each principal component is a mix of the original features.  In the [Iris](https://archive.ics.uci.edu/ml/datasets/iris) example below, we see the transformed data bears no relation to the original data.
 
@@ -64,7 +65,7 @@ Unfortunately, PCA makes the model harder to explain.  Each principal component 
 
 ![Alt text](images/PCA-head3.PNG)
 
-The benefit is that we can reduce the dimensions of our model.  It turns out that PC_0 and PC_1, half of the original columns, explain over 95% of model variance.
+The benefit is that we can reduce the dimensions of our model.  PC_0 and PC_1, half of the original columns, explain over 95% of model variance.
 ***
 #### <ins>Enhancements</ins>
 Future model enhancements include ensembling multiple models.  For example, averaging the results of Ridge regression and tree-based regression.  Effective ensembling improves model accuracy, the signal, while averaging out noise that differs across models.
