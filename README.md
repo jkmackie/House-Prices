@@ -49,12 +49,14 @@ High cardinality categorical features create a ton of one-hot columns!  They can
 
 Another way to deal with the high dimensionality (too many columns) issue is to compress the columns into fewer columns using [Principal Component Analysis (PCA)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html).  PCA maximizes data variance (equivalently, minimizing residual error), which sidesteps dealing with invariant columns manually.  Remember to standardize the features first!
 
-Unfortunately, PCA makes the model harder to explain.  Each principal component is a mix of the original features.
+Unfortunately, PCA makes the model harder to explain.  Each principal component is a mix of the original features.  Below, we see the transformed data bears no relation to the original data.
 
 <ins>**Iris Data:**</ins>
 
-![Alt text](images/outliers-TOT_SF.PNG)
+![Alt text](images/iris-head3.PNG)
 
-<ins>**Iris Data after StandardScaler and PCA:**</ins>
+<ins>**Transformed Iris Data - after StandardScaler and PCA:**</ins>
 
-![Alt text](images/outliers-TOT_SF.PNG)
+![Alt text](images/PCA-head3.PNG)
+
+The benefit is that we can reduce the dimensions of our model.  It turns out that PC_0 and PC_1, half the original columns, explain over 95% of model variance.
