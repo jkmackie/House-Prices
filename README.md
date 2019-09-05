@@ -48,7 +48,7 @@ Other invariant columns, independent of any encoding, were dropped.
 
 High cardinality categorical features are features with many unique values.  This sort of features creates many one-hot columns, blowing up dimensionality!  Feature binning works to mitigate this in some cases.  For example, the twelve months in 'MoSold' were converted to the four seasons and only then one-hot encoded.  
 
-There are other encoding techniques like [Leave-One-Out-Encoding (LOOE)](http://contrib.scikit-learn.org/categorical-encoding/leaveoneout.html) to handle high cardinality scenarios.  Leave-One-Out calculates the mean target by category ("level"), but excludes the current row (and optionally adds noise) to avoid overfitting.  I didn't try LOOE because it is better for binary classification.
+There are other encoding techniques like [Leave-One-Out-Encoding (LOOE)](http://contrib.scikit-learn.org/categorical-encoding/leaveoneout.html) to handle high cardinality scenarios.  **Leave-One-Out** calculates the mean target by category ("level"), but excludes the current row (and optionally adds noise) to avoid overfitting.  I didn't try LOOE because it is better for binary classification.
 
 #### <ins>Principal Component Analysis</ins>
 Another way to deal with the high dimensionality (too many columns) issue is to compress the columns into fewer columns using [Principal Component Analysis (PCA)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html).  PCA maximizes data variance (equivalently, minimizing residual error), which sidesteps dealing with invariant columns manually.  Remember to standardize the features first!
@@ -64,5 +64,5 @@ Unfortunately, PCA makes the model harder to explain.  Each principal component 
 ![Alt text](images/PCA-head3.PNG)
 
 The benefit is that we can reduce the dimensions of our model.  It turns out that PC_0 and PC_1, half of the original columns, explain over 95% of model variance.
-
+***
 The Iowa Houses model, the .ipynb notebook, scored 0.11963 on Kaggle.  This is top 25% on the Leaderboard.
