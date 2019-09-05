@@ -65,4 +65,9 @@ Unfortunately, PCA makes the model harder to explain.  Each principal component 
 
 The benefit is that we can reduce the dimensions of our model.  It turns out that PC_0 and PC_1, half of the original columns, explain over 95% of model variance.
 ***
-The Iowa Houses model, the .ipynb notebook, scored 0.11963 on Kaggle.  This is top 25% on the Leaderboard.
+#### <ins>Enhancements</ins>
+Future model enhancements include ensembling multiple models.  For example, averaging the results of Ridge regression and tree-based regression.  Effective ensembling improves model accuracy, the signal, while averaging out noise that differs across models.
+
+Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay big premium for high "OverallCond" and "OverallQual" houses over low condition.  Conversely, low-end buyers might pay a small premium for high condition over low condition.  Perhaps a LOOE-style feature based average price by Neighborhood/Condition would capture this relationship.
+***
+The posted Iowa Houses model, the .ipynb notebook, scored 0.11963 on Kaggle.  This is top 25% on the Leaderboard.
