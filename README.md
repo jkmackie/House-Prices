@@ -1,11 +1,11 @@
 # Iowa House-Prices
-*Price prediction model using regression with regularization and Machine learning techniques.*
+*Price prediction model using regularized regression and machine learning techniques.*
 ***
 #### <ins>Regression Summary</ins>
 
-This model, written in Python, predicts house prices.  The regression model was tuned using **cross-validation** (CV) with **Root Mean Squared Error** (RMSE) and the coefficient of determination, R<sup>2</sup>.  Cross validation returned RMSE for each fold.  The RMSE can be inspected and the standard deviation of the RMSEs taken to assess model fit quality and model stability.
+This model, written in Python, predicts house prices.  The regression model was tuned using cross-validation (CV) with Root Mean Squared Error (RMSE) and the coefficient of determination, R<sup>2</sup>.  Cross validation returned RMSE for each fold.  The RMSE can be inspected and the standard deviation of the RMSEs taken to assess model fit quality and model stability.
 
-**R<sup>2</sup>**, explains what portion of house prices are explained by the features (the independent variables).
+R<sup>2</sup>, explains what portion of house prices are explained by the features (the independent variables).
 
 Good models need a reality-check to make sure the model generalizes to unseen data, which we call **holdout** data.  After fitting/scoring the model with CV, I also scored model predictions on the holdout data.
 
