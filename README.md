@@ -9,8 +9,9 @@ R<sup>2</sup>, explains what portion of house prices are explained by the featur
 
 Good models need a reality-check to make sure the model generalizes to unseen data, which we call **holdout** data.  After fitting/scoring the model with CV, I also scored model predictions on the holdout data.
 
-The best model was Ridge, which was unsurprising as model dimensionality was high compared to available observations.  Ridge reduced the complexity of the model by regularizing the features.  It does this by penalizing some features with low weights, decreasing model complexity.  The regularization also handles the multicollinear features. (Principal Component Analysis will cut the number of features to a smaller number of uncorrelated principal components.  See below.)
+The best model was Ridge, which was unsurprising as model dimensionality was high compared to available observations.  Ridge reduced the complexity of the model by regularizing the features.  It does this by penalizing some features with low weights, decreasing model complexity.  The regularization also helps with multicollinear features. (Principal Component Analysis will cut the number of features to a smaller number of uncorrelated principal components.  See below.)
 
+Certain collinear features were combined or dropped.  For example, GarageArea, which is highly correlated to GarageCars, was dropped.
 
 #### <ins>Feature Engineering</ins>
 
