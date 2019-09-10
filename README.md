@@ -74,4 +74,4 @@ Future model enhancements include ensembling multiple models.  For example, aver
 Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high condition houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
 ***
 #### <ins>Result</ins>
-The posted Iowa Houses model, the .ipynb notebook, scored 0.11963 on Kaggle.  This is top 25% on the Leaderboard.
+The posted Iowa Houses model, the .ipynb notebook, scored 0.1191 on Kaggle.  This is top quarter on the Leaderboard.
