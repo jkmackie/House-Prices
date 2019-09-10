@@ -71,7 +71,7 @@ The benefit is that we can reduce the dimensions of our model.  PC_0 and PC_1, h
 #### <ins>Enhancements</ins>
 Future model enhancements include ensembling multiple models.  For example, averaging the results of Ridge regression and tree-based regression.  Effective ensembling improves model accuracy, the signal, while averaging out noise that differs across models.
 
-Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high "OverallCond" and "OverallQual" houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
+Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high condition houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
 ***
 #### <ins>Result</ins>
 The posted Iowa Houses model, the .ipynb notebook, scored 0.11963 on Kaggle.  This is top 25% on the Leaderboard.
