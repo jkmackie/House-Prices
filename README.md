@@ -41,7 +41,7 @@ The yellow-shaded outlier square footages were dropped.
 
 ![Alt text](images/outliers-TOT_SF.PNG)
 
-There were many skewed features.  I wrote a function that minimizes features skew in train and applies the same transform to the feature in test, avoiding data leakage.  The aggressiveness of the transform is determined by train only.  If the transform worsens the skew metric, no transform is applied.  The numeric feature skew corrections were sufficient--no scaling was applied to untouched, low-skew numeric features.
+There were many skewed features.  I optimize feature skew in train and apply the same transform to test, avoiding data leakage.  The aggressiveness of the transform is determined by train only.  If the transform worsens the skew metric, no transform is applied.  The numeric feature skew corrections were sufficient--no scaling was applied to untouched, low-skew numeric features.
 
 #### <ins>Categorical Features</ins>
 Sometimes, a numeric feature is actually a categorical feature.  MSSubClass, the dwelling type, is such a feature.  It was cast as categorical so it could be subsequently one-hot encoded.
