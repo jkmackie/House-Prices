@@ -11,7 +11,7 @@ Good models need a reality-check to make sure the model generalizes to unseen da
 
 The best model was Ridge, which was unsurprising as model dimensionality was high compared to available observations.  Ridge reduced the complexity of the model by regularizing the features.  It does this by penalizing some features with low weights, decreasing model complexity.  The regularization also helps with multicollinear features. (Principal Component Analysis will cut the number of features to a smaller number of uncorrelated principal components.  See below.)
 
-Certain collinear features were combined or dropped.  For example, GarageArea, which is highly correlated to GarageCars, was dropped.
+Certain collinear features were combined or dropped.  For example, GarageArea, which is highly correlated to GarageCars, was dropped.  Polynomial features were added, which improved model prediction, despite collinearity.
 
 #### <ins>Feature Engineering</ins>
 
@@ -74,4 +74,4 @@ Future model enhancements include ensembling multiple models.  For example, aver
 Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high condition houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
 ***
 #### <ins>Result</ins>
-The posted Iowa Houses model, the .ipynb notebook, scored 0.1191 on Kaggle.  This is top quarter on the Leaderboard.
+The posted Iowa Houses model, the .ipynb notebook, scored 0.11724 on Kaggle.  This is top 20% on the Leaderboard.
