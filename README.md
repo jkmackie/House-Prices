@@ -69,9 +69,9 @@ Unfortunately, PCA makes the model harder to explain.  Each principal component 
 The benefit is that we can reduce the dimensions of our model.  PC_0 and PC_1, half of the original columns, explain over 95% of model variance.
 ***
 #### <ins>Enhancements</ins>
-Future model enhancements include ensembling multiple models.  For example, averaging the results of Ridge regression and tree-based regression.  Effective ensembling improves model accuracy, the signal, while averaging out noise that differs across models.
+Future model enhancements include stacking or averaging multiple models.  For example, averaging the results of Ridge regression and tree-based regression.  Multi-model ensembles improve model accuracy, the signal, while averaging out noise that differs across models.
 
 Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high condition houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
 ***
 #### <ins>Result</ins>
-The posted Iowa Houses model, the .ipynb notebook, scored 0.11724 on Kaggle.  This is top 20% on the Leaderboard.  It was achieved with a standalone Ridge model, without the added complexity/compute of model stacking or model averaging.
+The posted Iowa Houses model, the .ipynb notebook, scored 0.11724 on Kaggle.  This is top 20% on the Leaderboard.  The result was achieved with a standalone Ridge model.  This single-model approach avoids the higher complexity and lower transparency of model stacking or model averaging.
