@@ -75,6 +75,3 @@ Also, engineering more high correlation features will improve model accuracy.  I
 ***
 #### <ins>Result</ins>
 The Ridge notebook scored in the top 20% on the Leaderboard.  This was achieved with a standalone Ridge Regression.  This single-model approach avoids the higher complexity and lower transparency of model stacking or model averaging.
-
-*`Edit 02-14-2020`*
-Added a LightGBM notebook that scored in the **top 4% on the Leaderboard**.  The LightGBM model used the same data as the Ridge model.  Categorical features were target encoded rather than one-hot encoded.
