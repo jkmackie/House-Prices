@@ -1,5 +1,5 @@
 # Iowa House-Prices
-*Price prediction model using regularized regression and machine learning techniques.*
+*Price prediction model using feature engineering and machine learning techniques.*
 ***
 #### <ins>Regression Summary</ins>
 
