@@ -74,4 +74,7 @@ Future model enhancements include stacking or averaging multiple models.  For ex
 Also, engineering more high correlation features will improve model accuracy.  I suspect affluent buyers pay a big premium for high condition houses over low condition.  Conversely, low-end buyers may pay a small premium for high condition over low condition.  Maybe a feature averaging price by Neighborhood/Condition will capture buyer price sensitivity.
 ***
 #### <ins>Result</ins>
-The posted Iowa Houses model, the .ipynb notebook, scored 0.11724 on Kaggle.  This is top 20% on the Leaderboard.  The result was achieved with a standalone Ridge model.  This single-model approach avoids the higher complexity and lower transparency of model stacking or model averaging.
+The Ridge notebook scored in the top 20% on the Leaderboard.  This was achieved with a standalone Ridge Regression.  This single-model approach avoids the higher complexity and lower transparency of model stacking or model averaging.
+
+*Edit 02-14-2020*
+Added a LightGBM notebook that scored in the **top 4% on the Leaderboard**.  The LightGBM model used the same data as the Ridge model.  Categorical features were target encoded rather than one-hot encoded.
